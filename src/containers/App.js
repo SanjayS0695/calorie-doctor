@@ -1,8 +1,8 @@
-import ReactDOM from 'react-dom/client';
-import React from 'react';
-import SideBarContainer from './SideBarContainer/SideBarContainer';
-import NavBarContainer from './NavBarContainer/NavbarContainer';
-import BodyContainer from './BodyContainer/BodyContainer';
+import ReactDOM from "react-dom/client";
+import React from "react";
+import SideBarContainer from "./SideBarContainer/SideBarContainer";
+import NavBarContainer from "./NavBarContainer/NavbarContainer";
+import BodyContainer from "./BodyContainer/BodyContainer";
 
 const App = () => {
   return (
