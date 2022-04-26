@@ -12,17 +12,20 @@ const DateComponent = ({ currentDay, id, selectedDateId, selectDate }) => {
 
     return (
         <div
-            className={styles[`date-wrapper` + getClass()]}
+            className={styles[`date-wrapper${getClass()}`]}
             onClick={() => selectDate(id, currentDay.currentDate)}
         >
-            <p>{currentDay.date}</p>
-            <p>{currentDay.day}</p>
+            <p className={styles['date']}>{currentDay.date}</p>
+            <p className={styles['day']}>{currentDay.day}</p>
         </div>
     );
 };
 
 DateComponent.propTypes = {
-    day: PropTypes.object,
+    currentDay: PropTypes.object,
+    id: PropTypes.string,
+    selectedDateId: PropTypes.string,
+    selectDate: PropTypes.func,
 };
 
 export default DateComponent;

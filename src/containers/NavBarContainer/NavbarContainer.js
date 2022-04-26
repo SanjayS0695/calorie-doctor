@@ -1,15 +1,17 @@
-import React from 'react'
-import DateBarComponent from '../../components/DateBarComponent/DateBarComponent'
-import styles from './NavBarContainer.module.scss'
+import React from 'react';
+import DateBarComponent from '../../components/DateBarComponent/DateBarComponent';
+import UserProfileHeaderComponent from '../../components/UserProfileComponent/UserProfileHeaderComponent';
+import styles from './NavBarContainer.module.scss';
 
 const NavBarContainer = () => {
     return (
         <div className={styles['nav-bar-container']}>
-            <div className={styles['date-bar-wrapper']}>
-                <DateBarComponent></DateBarComponent>
+            <DateBarComponent></DateBarComponent>
+            <div className={styles['user-profile-header-container']}>
+                <UserProfileHeaderComponent></UserProfileHeaderComponent>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default NavBarContainer
+export default NavBarContainer;
