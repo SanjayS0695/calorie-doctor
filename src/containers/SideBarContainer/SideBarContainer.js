@@ -1,6 +1,6 @@
-import React from 'react'
-import logo from '../../assets/images/logo.png'
-import styles from './SideBarContainer.module.scss'
+import React from 'react';
+import logo from '../../assets/images/logo.png';
+import styles from './SideBarContainer.module.scss';
 
 const SideBarContainer = () => {
     return (
@@ -10,7 +10,7 @@ const SideBarContainer = () => {
                 <img src={logo}></img>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SideBarContainer
+export default SideBarContainer;

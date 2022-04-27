@@ -28,15 +28,15 @@ const UserProfileHeaderComponent = () => {
                 <ul>
                     <li>
                         <AccountBoxRoundedIcon />
-                        <span>My Account </span>
+                        <span>My Account</span>
                     </li>
                     <li>
                         <ModeEditTwoToneIcon />
-                        <span>Edit Account </span>
+                        <span>Edit Account</span>
                     </li>
                     <li>
                         <LogoutTwoToneIcon />
-                        <span>Log Out </span>
+                        <span>Log Out</span>
                     </li>
                 </ul>
             </div>

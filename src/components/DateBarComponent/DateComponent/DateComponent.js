@@ -5,14 +5,14 @@ import styles from './DateComponent.module.scss';
 const DateComponent = ({ currentDay, id, selectedDateId, selectDate }) => {
     const getClass = () => {
         if (selectedDateId === id) {
-            return '-selected';
+            return 'date-wrapper';
         }
-        return '';
+        return 'date-wrapper';
     };
 
     return (
         <div
-            className={styles[`date-wrapper${getClass()}`]}
+            className={styles[getClass()]}
             onClick={() => selectDate(id, currentDay.currentDate)}
         >
             <p className={styles['date']}>{currentDay.date}</p>

@@ -1,130 +1,143 @@
-@import 'src/assets/scss/variables.module';
+@import "src/assets/scss/variables.module";
 
 @mixin round-background {
-    background-color: $secondary;
-    box-shadow: 0px 0px 6px #00000029;
-    border-radius: 50px;
+  background-color: $secondary;
+  box-shadow: 0 0 6px #00000029;
+  border-radius: 50px;
 }
 
 @mixin align-centre {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin arrow-sub {
-    @include align-centre();
-    width: 4vh;
-    height: 4vh;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    @include round-background();
-    color: $secondaryDark;
+  @include align-centre;
+
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50px;
+  border-radius: 50px;
+
+  @include round-background;
+
+  color: $secondaryDark;
 }
 
 .wrapper {
-    display: inline-flex;
-    width: 100%;
+  display: inline-flex;
+  width: 100%;
 
-    .current-date-wrapper {
-        width: 20%;
-        color: $textColorMain;
-        @include align-centre();
+  .current-date-wrapper {
+    width: 20%;
+    color: $textColorMain;
 
-        .reload {
-            flex: 1;
-            @include align-centre();
+    @include align-centre;
 
-            svg {
-                transform: 1s all;
-                font-size: x-large;
-                @include round-background();
-            }
+    .reload {
+      flex: 1;
 
-            svg:hover {
-                transform: scale(1.2);
-                @include round-background();
-                cursor: pointer;
-                transition: 0.2s;
-            }
-        }
+      @include align-centre;
 
-        .current-date {
-            flex: 1;
-            font-size: larger;
-            font-weight: bolder;
-        }
+      svg {
+        transform: 1s all;
+        font-size: x-large;
+
+        @include round-background;
+      }
+
+      svg:hover {
+        transform: scale(1.2);
+
+        @include round-background;
+
+        cursor: pointer;
+        transition: 0.2s;
+      }
     }
 
-    .date-main-wrapper {
-        width: 60%;
-        position: relative;
+    .current-date {
+      flex: 1;
+      font-size: larger;
+      font-weight: bolder;
+    }
+  }
 
-        .left-arrow-wrapper {
-            position: absolute;
-            top: 25%;
-            left: -3%;
-            cursor: pointer;
+  .date-main-wrapper {
+    width: 60%;
+    position: relative;
 
-            .arrow {
-                @include arrow-sub();
-            }
+    .left-arrow-wrapper {
+      position: absolute;
+      top: 25%;
+      left: -3%;
+      cursor: pointer;
 
-            .arrow:hover {
-                @include arrow-sub();
-                background-color: $primary;
-                transition: 0.2s;
-            }
+      .arrow {
+        @include arrow-sub;
+      }
 
-            svg:hover {
-                height: 3vh;
-                width: 3vh;
-                @include round-background();
-                box-shadow: none;
-                transition: 0.2s;
-            }
-        }
+      .arrow:hover {
+        @include arrow-sub;
 
-        .right-arrow-wrapper {
-            position: absolute;
-            cursor: pointer;
-            top: 25%;
-            right: -3%;
+        background-color: $primary;
+        transition: 0.2s;
+      }
 
-            .arrow {
-                @include arrow-sub();
-            }
+      svg:hover {
+        width: 3vh;
+        height: 3vh;
+        box-shadow: none;
+        transition: 0.2s;
 
-            .arrow:hover {
-                @include arrow-sub();
-                background-color: $primary;
-                transition: 0.2s;
-            }
-
-            svg:hover {
-                height: 3vh;
-                width: 3vh;
-                @include round-background();
-                box-shadow: none;
-                transition: 0.2s;
-            }
-        }
+        @include round-background;
+      }
     }
 
-    .day-count-main {
-        width: 20%;
-        color: $textColorMain;
-        @include align-centre();
+    .right-arrow-wrapper {
+      position: absolute;
+      cursor: pointer;
+      top: 25%;
+      right: -3%;
 
-        svg {
-            float: left;
-            color: #f5c703;
-            font-size: xxx-large;
-        }
+      .arrow {
+        @include arrow-sub;
+      }
 
-        div {
-            font-size: x-large;
-            font-weight: bold;
-        }
+      .arrow:hover {
+        @include arrow-sub;
+
+        background-color: $primary;
+        transition: 0.2s;
+      }
+
+      svg:hover {
+        width: 3vh;
+        height: 3vh;
+        box-shadow: none;
+        transition: 0.2s;
+
+        @include round-background;
+      }
     }
+  }
+
+  .day-count-main {
+    width: 20%;
+    color: $textColorMain;
+
+    @include align-centre;
+
+    svg {
+      float: left;
+      color: #f5c703;
+      font-size: xxx-large;
+    }
+
+    div {
+      font-size: x-large;
+      font-weight: bold;
+    }
+  }
 }
