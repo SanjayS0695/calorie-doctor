@@ -1,4 +1,5 @@
 import React from 'react';
+import NutritionCard from '../../components/DashboardCards/NutritionCard/NutritionCard';
 import styles from './BodyContainer.module.scss';
 
 const BodyContainer = () => {
@@ -9,7 +10,7 @@ const BodyContainer = () => {
                 <h3>Your day so far</h3>
             </div>
             <div className={styles['dashboard-card']}>
-                <div className={styles['nutrition-card']}>Nutrition Card</div>
+                <NutritionCard></NutritionCard>
                 <div className={styles['sub-card']}>
                     <div className={styles['calorie-card']}>Calorie Card</div>
                     <div className={styles['glass-step-card']}>

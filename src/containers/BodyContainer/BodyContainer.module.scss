@@ -45,15 +45,70 @@
 
         .nutrition-card {
             flex: 2;
-
             @include background-color;
-
             border-radius: 5%;
             margin: 0 2.5% 0 5%;
-
-            @include flex-align-centre;
-
             box-shadow: 0 3px 6px #00000029;
+            flex-direction: column;
+
+            h2 {
+                margin: 5% 5% 5% 5%;
+                padding: 5% 0 0 5%;
+                color: $light;
+                text-shadow: -0.6px -0.6px 0 $textColorMain,
+                    0.6px -0.6px 0 $textColorMain, -0.6px 0.6px 0 $textColorMain,
+                    0.6px 0.6px 0 $textColorMain;
+            }
+
+            .nutrition-progress {
+                margin: 5% 5% 5% 10%;
+                width: 100%;
+                height: fit-content;
+                display: inline-flex;
+                flex-direction: row;
+
+                .nutrition-calories-actions {
+                    display: inline-flex;
+                    flex-direction: column;
+                    margin: 2.5% 5% 5% 10%;
+
+                    .nutrition-progress-calories {
+                        flex: 1;
+                        white-space: pre;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: $light;
+                        text-shadow: -0.6px -0.6px 0 $textColorMain,
+                            0.6px -0.6px 0 $textColorMain,
+                            -0.6px 0.6px 0 $textColorMain,
+                            0.6px 0.6px 0 $textColorMain;
+                        margin: 0 10% 0 0;
+                    }
+
+                    svg {
+                        margin: 15% 0 0 0;
+                        color: #55652f;
+                        font-size: 35px;
+
+                        &:hover {
+                            background-color: $secondary;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                    }
+
+                    svg:nth-child(2) {
+                        margin: 15% 0 0 20%;
+                        color: #f17f53;
+                        font-size: 35px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .nutrition-content {
+                flex: 1;
+            }
         }
 
         .sub-card {
