@@ -1,5 +1,9 @@
 import React from 'react';
 import NutritionCard from '../../components/DashboardCards/NutritionCard/NutritionCard';
+import CalorieCard from '../../components/DashboardCards/CalorieCard/CalorieCard';
+import WaterGlassCard from '../../components/DashboardCards/WaterGlassCard/WaterGlassCard';
+import WeightCard from '../../components/DashboardCards/WeightCard/WeightCard';
+import SleepCard from '../../components/DashboardCards/SleepCard/SleepCard';
 import styles from './BodyContainer.module.scss';
 
 const BodyContainer = () => {
@@ -12,14 +16,22 @@ const BodyContainer = () => {
             <div className={styles['dashboard-card']}>
                 <NutritionCard></NutritionCard>
                 <div className={styles['sub-card']}>
-                    <div className={styles['calorie-card']}>Calorie Card</div>
+                    <div className={styles['calorie-card']}>
+                        <CalorieCard></CalorieCard>
+                    </div>
                     <div className={styles['glass-step-card']}>
-                        <div className={styles['glass-card']}>Glass Card</div>
+                        <div className={styles['glass-card']}>
+                            <WaterGlassCard></WaterGlassCard>
+                        </div>
                         <div className={styles['step-card']}>Step Card</div>
                     </div>
                     <div className={styles['weight-sleep-card']}>
-                        <div className={styles['weight-card']}>Weight Card</div>
-                        <div className={styles['sleep-card']}>Sleep Card</div>
+                        <div className={styles['weight-card']}>
+                            <WeightCard></WeightCard>
+                        </div>
+                        <div className={styles['sleep-card']}>
+                            <SleepCard></SleepCard>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,23 +8,22 @@ import styles from './NutritionCard.module.scss';
 
 const NutritionCard = () => {
     return (
-        <div className={styles['nutrition-card']}>
+        <div className={styles['main-container']}>
             <h2>Nutrition</h2>
-            <div className={styles['nutrition-progress']}>
-                <div className={styles['nutrition-progress-icon']}>
-                    <CircularProgressBar
-                        backgroundColor={'#8aa250'}
-                        currentProgress={65}
-                        innerSvg={<DiningRoundedIcon />}
-                        progressSpeed={7}
-                        svgColour={'#FFC950'}
-                    ></CircularProgressBar>
-                </div>
-                <div className={styles['nutrition-calories-actions']}>
-                    <div className={styles['nutrition-progress-calories']}>
+            <div className={styles['progress-container']}>
+                <CircularProgressBar
+                    backgroundColor={'#8aa250'}
+                    currentProgress={65}
+                    innerSvg={<DiningRoundedIcon />}
+                    progressSpeed={7}
+                    svgColour={'#FFC950'}
+                    width={'100px'}
+                ></CircularProgressBar>
+                <div className={styles['actions-container']}>
+                    <div className={styles['progress-content']}>
                         Eat upto 1,950 Cals
                     </div>
-                    <div className={styles['nutrition-graph-addition']}>
+                    <div>
                         <EqualizerRoundedIcon></EqualizerRoundedIcon>
                         <AddRoundedIcon></AddRoundedIcon>
                     </div>

@@ -4,7 +4,7 @@
     background: linear-gradient(120deg, $primary, #99b45a);
 }
 
-.nutrition-card {
+.main-container {
     flex: 2;
     @include background-color;
     border-radius: 5%;
@@ -21,19 +21,19 @@
             0.6px 0.6px 0 $textColorMain;
     }
 
-    .nutrition-progress {
+    .progress-container {
         margin: 5% 5% 5% 10%;
         width: 100%;
         height: fit-content;
         display: inline-flex;
         flex-direction: row;
 
-        .nutrition-calories-actions {
+        .actions-container {
             display: inline-flex;
             flex-direction: column;
             margin: 2.5% 5% 5% 10%;
 
-            .nutrition-progress-calories {
+            .progress-content {
                 flex: 1;
                 white-space: pre;
                 font-size: 20px;

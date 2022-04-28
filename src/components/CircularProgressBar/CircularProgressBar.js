@@ -17,20 +17,21 @@ const CircularProgressBar = ({
         const root = document.documentElement;
         root?.style.setProperty('--background-color', backgroundColor);
         root?.style.setProperty('--size', width);
-    }, []);
+    }, [backgroundColor, width]);
 
     useEffect(() => {
         let value = 0;
-        const progress = setInterval(() => {
-            value++;
-            setProgressColor(`conic-gradient(${svgColour} ${value * 3.6}deg,
+        if (currentProgress) {
+            const progress = setInterval(() => {
+                if (value === currentProgress) {
+                    setProgressValue(value);
+                    clearInterval(progress);
+                }
+                value++;
+                setProgressColor(`conic-gradient(${svgColour} ${value * 3.6}deg,
                 #fff ${value * 3.6}deg)`);
-
-            if (value === currentProgress) {
-                setProgressValue(value);
-                clearInterval(progress);
-            }
-        }, progressSpeed);
+            }, progressSpeed);
+        }
     }, [currentProgress]);
 
     return (
