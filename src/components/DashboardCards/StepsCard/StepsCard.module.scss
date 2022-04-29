@@ -19,10 +19,13 @@
 @mixin inner-circle-hover {
     width: 4vh;
     height: 4vh;
+    border-radius: 50px;
+    border-radius: 50px;
     cursor: pointer;
     @include round-background;
     color: $secondaryDark;
-    transition: 0.5s;
+    background-color: $light;
+    transition: 0.8s;
 }
 
 .main-container {
@@ -33,46 +36,11 @@
     width: 100%;
     height: auto;
 
-    .progress-action {
-        display: inline-flex;
-        flex-direction: row;
-        width: 100%;
-        height: auto;
+    .circular-progress {
+        flex: 1;
 
-        .minus-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-
-            svg {
-                font-size: 40px;
-                color: $light;
-            }
-
-            svg:hover {
-                @include inner-circle-hover();
-            }
-        }
-
-        .circular-progress {
-            flex: 1;
-        }
-
-        .add-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-
-            svg {
-                font-size: 40px;
-                color: $light;
-            }
-
-            svg:hover {
-                @include inner-circle-hover();
-            }
+        svg {
+            transform: rotate(345deg);
         }
     }
 

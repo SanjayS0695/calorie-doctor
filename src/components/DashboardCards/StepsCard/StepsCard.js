@@ -1,23 +1,23 @@
 import React from 'react';
 import CircularProgressBar from '../../CircularProgressBar/CircularProgressBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWeightScale } from '@fortawesome/free-solid-svg-icons';
-import styles from './WeightCard.module.scss';
+import { faShoePrints } from '@fortawesome/free-solid-svg-icons';
+import styles from './StepsCard.module.scss';
 
-const WeightCard = () => {
+const StepsCard = () => {
     return (
         <div className={styles['main-container']}>
             <CircularProgressBar
                 backgroundColor={'#8aa250'}
                 currentProgress={0}
-                innerSvg={<FontAwesomeIcon icon={faWeightScale} />}
+                innerSvg={<FontAwesomeIcon icon={faShoePrints} />}
                 progressSpeed={7}
-                svgColour={'#F29ACD'}
+                svgColour={'#97F5FD'}
                 width={'100px'}
             ></CircularProgressBar>
-            <div className={styles['progress-content']}>0.0 of 2.4Kgs lost</div>
+            <div className={styles['progress-content']}>Walk 10,000 Steps</div>
         </div>
     );
 };
 
-export default WeightCard;
+export default StepsCard;

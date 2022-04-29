@@ -4,6 +4,7 @@ import CalorieCard from '../../components/DashboardCards/CalorieCard/CalorieCard
 import WaterGlassCard from '../../components/DashboardCards/WaterGlassCard/WaterGlassCard';
 import WeightCard from '../../components/DashboardCards/WeightCard/WeightCard';
 import SleepCard from '../../components/DashboardCards/SleepCard/SleepCard';
+import StepsCard from '../../components/DashboardCards/StepsCard/StepsCard';
 import styles from './BodyContainer.module.scss';
 
 const BodyContainer = () => {
@@ -21,9 +22,14 @@ const BodyContainer = () => {
                     </div>
                     <div className={styles['glass-step-card']}>
                         <div className={styles['glass-card']}>
-                            <WaterGlassCard></WaterGlassCard>
+                            <WaterGlassCard
+                                maximumLimit={10}
+                                progress={2}
+                            ></WaterGlassCard>
                         </div>
-                        <div className={styles['step-card']}>Step Card</div>
+                        <div className={styles['step-card']}>
+                            <StepsCard></StepsCard>
+                        </div>
                     </div>
                     <div className={styles['weight-sleep-card']}>
                         <div className={styles['weight-card']}>

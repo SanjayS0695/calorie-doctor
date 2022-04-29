@@ -5,6 +5,7 @@ import styles from './CircularProgressBar.module.scss';
 const CircularProgressBar = ({
     backgroundColor,
     currentProgress,
+    displayPercentage,
     innerSvg,
     progressSpeed,
     svgColour,
@@ -44,7 +45,7 @@ const CircularProgressBar = ({
                 style={{ color: `${svgColour}` }}
             >
                 {innerSvg}
-                <span>{progressValue}%</span>
+                {displayPercentage && <span>{progressValue}%</span>}
             </div>
         </div>
     );
@@ -62,6 +63,7 @@ CircularProgressBar.proptypes = {
 CircularProgressBar.defaultProps = {
     backgroundColor: '#fff',
     currentProgress: 0,
+    displayPercentage: false,
     progressSpeed: 5,
     svgColour: '#87CEEB',
     width: '110px',
