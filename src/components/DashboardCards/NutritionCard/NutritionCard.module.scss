@@ -8,12 +8,13 @@
     flex: 2;
     @include background-color;
     border-radius: 5%;
-    margin: 0 2.5% 0 5%;
+    margin: 0 5% 0 5%;
     box-shadow: 0 3px 6px #00000029;
+    padding: 0 0 5% 0;
     flex-direction: column;
 
     h2 {
-        margin: 5% 5% 5% 5%;
+        margin: 2.5% 5% 2.5% 5%;
         padding: 5% 0 0 5%;
         color: $light;
         text-shadow: -0.6px -0.6px 0 $textColorMain,
@@ -22,7 +23,7 @@
     }
 
     .progress-container {
-        margin: 5% 5% 5% 10%;
+        margin: 2.5% 5% 5% 10%;
         width: 100%;
         height: fit-content;
         display: inline-flex;
@@ -108,95 +109,6 @@
             flex: 1;
             display: inline-flex;
             flex-direction: column;
-        }
-
-        .meal-card {
-            position: absolute;
-            width: 110%;
-            height: auto;
-            @include background-color;
-            border-radius: 5%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 7.5%;
-
-            z-index: 10;
-            outline: 9999px solid rgba(0, 0, 0, 0.4);
-
-            flex-direction: column;
-            color: $light;
-            text-shadow: -0.6px -0.6px 0 $textColorMain,
-                0.6px -0.6px 0 $textColorMain, -0.6px 0.6px 0 $textColorMain,
-                0.6px 0.6px 0 $textColorMain;
-
-            .header {
-                display: inline-flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: left;
-                margin-top: 1%;
-                width: 100%;
-                height: auto;
-
-                h4 {
-                    margin-left: 5%;
-                }
-
-                .close-meal-card {
-                    display: flex;
-                    align-items: center;
-                    margin-left: 10%;
-                    margin-right: 5%;
-                    svg {
-                        color: $textColorMainDark;
-
-                        &:hover {
-                            background-color: $secondary;
-                            border-radius: 50%;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-
-            .meal-container {
-                display: inline-flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                height: auto;
-                margin: 2.5% 5%;
-
-                .meal-title {
-                    padding-left: 5%;
-                    flex: 2;
-                }
-
-                .meal-calories {
-                    flex: 1;
-                }
-
-                svg {
-                    margin-right: 5%;
-                    color: #f17f53;
-
-                    &:hover {
-                        background-color: $secondary;
-                        border-radius: 50%;
-                        cursor: pointer;
-                    }
-                }
-
-                hr {
-                    margin: 0 10%;
-                }
-            }
-
-            .meal-container:nth-child(6) {
-                margin: 2.5% 5% 5% 5%;
-            }
         }
     }
 }

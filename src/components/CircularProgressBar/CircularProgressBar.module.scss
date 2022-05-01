@@ -1,44 +1,17 @@
 @import 'src/assets/scss/variables.module';
 
-#root {
-    $background-color: '#fff';
-    $size: 110px;
-}
+.inner-circular-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.circular-progress {
-    position: relative;
-    height: var(--size);
-    width: var(--size);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    box-shadow: 0 0 6px #00000029;
-
-    &::before {
-        content: '';
-        position: absolute;
-        height: 84%;
-        width: 84%;
-        background-color: var(--background-color);
-        border-radius: 50%;
-        box-shadow: inset 0 0 6px #00000029;
+    svg {
+        position: relative;
+        justify-content: center;
     }
 
-    .inner-circular-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        svg {
-            position: relative;
-            height: calc(var(--size) / 2);
-            width: calc(var(--size) / 2);
-            justify-content: center;
-        }
-
-        span {
-            position: relative;
-            color: $light;
-        }
+    span {
+        position: relative;
+        color: $light;
     }
 }

@@ -13,7 +13,7 @@ const WeightCard = () => {
                 innerSvg={<FontAwesomeIcon icon={faWeightScale} />}
                 progressSpeed={7}
                 svgColour={'#F29ACD'}
-                width={'100px'}
+                width={'95px'}
             ></CircularProgressBar>
             <div className={styles['progress-content']}>0.0 of 2.4Kgs lost</div>
         </div>

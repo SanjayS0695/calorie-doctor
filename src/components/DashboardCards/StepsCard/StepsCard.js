@@ -13,7 +13,7 @@ const StepsCard = () => {
                 innerSvg={<FontAwesomeIcon icon={faShoePrints} />}
                 progressSpeed={7}
                 svgColour={'#97F5FD'}
-                width={'100px'}
+                width={'95px'}
             ></CircularProgressBar>
             <div className={styles['progress-content']}>Walk 10,000 Steps</div>
         </div>

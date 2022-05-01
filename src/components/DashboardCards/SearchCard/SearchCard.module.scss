@@ -1,0 +1,102 @@
+@import 'src/assets/scss/variables.module';
+
+.search-card {
+    position: absolute;
+    width: 46%;
+    left: 50%;
+    top: 18%;
+    height: 79%;
+    background: linear-gradient(120deg, $primary, #99b45a);
+    z-index: 999;
+    border-radius: 25px;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
+
+    .header {
+        width: 100%;
+        height: 17.5%;
+        background-color: #a7bf6e;
+        border-radius: 15px;
+        top: -43%;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 3px 6px #00000029;
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 0 7.5%;
+            background-color: $secondaryDark;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+
+            svg {
+                color: $light;
+                cursor: pointer;
+            }
+        }
+
+        .search-field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 0 12.5%;
+        }
+    }
+
+    .frequent-food-card {
+        width: 90%;
+        height: 65%;
+        margin: 5% 0 5% 5%;
+        border-radius: 2%;
+        display: flex;
+        flex-direction: column;
+        background-color: #9eba5c;
+        box-shadow: 0 0 5px 2px #00000029;
+        position: relative;
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgb(190, 222, 111);
+            border-radius: 10px;
+            background: $light;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f17f53;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            cursor: pointer !important;
+        }
+
+        .frequent-food-header {
+            width: 100%;
+            padding: 5% 0 2.5% 5%;
+            font-size: 18px;
+            color: $light;
+            text-shadow: -0.6px -0.6px 0 $textColorMain,
+                0.6px -0.6px 0 $textColorMain, -0.6px 0.6px 0 $textColorMain,
+                0.6px 0.6px 0 $textColorMain;
+        }
+
+        .frequent-food-content {
+            top: 20%;
+            width: 90%;
+            height: 70%;
+            padding: 0 0 5% 5%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

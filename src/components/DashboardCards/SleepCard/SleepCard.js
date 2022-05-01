@@ -12,7 +12,7 @@ const SleepCard = () => {
                 innerSvg={<LocalHotelIcon />}
                 progressSpeed={7}
                 svgColour={'#97F5FD'}
-                width={'100px'}
+                width={'95px'}
             ></CircularProgressBar>
             <div className={styles['progress-content']}>Set Sleep Goal</div>
         </div>

@@ -55,7 +55,7 @@ const WaterGlassCard = ({ maximumLimit, progress }) => {
                     innerSvg={<LocalDrinkSharpIcon />}
                     progressSpeed={7}
                     svgColour={'#00DFD1'}
-                    width={'100px'}
+                    width={'95px'}
                 ></CircularProgressBar>
                 <div className={styles['add-button']} onClick={addGlass}>
                     <AddCircleIcon></AddCircleIcon>

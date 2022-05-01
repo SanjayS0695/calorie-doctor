@@ -14,7 +14,7 @@ const CalorieCard = () => {
                 innerSvg={<DirectionsRunSharpIcon />}
                 progressSpeed={7}
                 svgColour={'#EDED83'}
-                width={'100px'}
+                width={'95px'}
             ></CircularProgressBar>
             <div className={styles['progress-container']}>
                 300 of 394 Calories Burnt
