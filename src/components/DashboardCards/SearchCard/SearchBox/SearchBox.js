@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from './SearchBox.module.scss';
 
-const SearchBox = () => {
+const SearchBox = ({ handleSearch, searchBoxStatus }) => {
     const [searchActive, setSearchActive] = useState(false);
 
     const onSearchButtonClick = () => {
-        setSearchActive(true);
+        if (searchActive) {
+            handleSearch();
+        } else {
+            setSearchActive(true);
+        }
     };
 
     const onCloseButtonClick = () => {
@@ -36,6 +40,7 @@ const SearchBox = () => {
                 }}
                 type="text"
                 placeholder="Type to search.."
+                onKeyDown={handleSearch}
             ></input>
             <div
                 className={`${styles['search-btn']}  ${

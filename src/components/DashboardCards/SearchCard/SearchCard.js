@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import FoodItem from '../../FoodItem/FoodItem';
-import SearchBox from '../../SearchBox/SearchBox';
+import SearchBox from './SearchBox/SearchBox';
+import FrequentFoodComponent from './FrequentFoodComponent/FrequentFoodComponent';
+import SearchResultCard from './SearchResultCard/SearchResultCard';
 import styles from './SearchCard.module.scss';
 
 const SearchCard = ({ closeSearchCard }) => {
+    const [searchResultCardStatus, setSearchResultCardStatus] = useState(false);
+    const [frequentFoodComponent, setfrequentFoodComponent] = useState(true);
+
+    const closeSearchResults = () => {
+        setSearchResultCardStatus(false);
+        setfrequentFoodComponent(true);
+    };
+
+    const handleSearch = () => {
+        setSearchResultCardStatus(true);
+        setfrequentFoodComponent(false);
+    };
+
     return (
         <div className={styles['search-card']}>
             <div className={styles['header']}>
@@ -13,26 +27,17 @@ const SearchCard = ({ closeSearchCard }) => {
                     <ArrowBackRoundedIcon></ArrowBackRoundedIcon>
                 </div>
                 <div className={styles['search-field']}>
-                    <SearchBox></SearchBox>
+                    <SearchBox handleSearch={handleSearch}></SearchBox>
                 </div>
             </div>
-            <div className={styles['frequent-food-card']}>
-                <div className={styles['frequent-food-header']}>
-                    Frequently tracked foods:
-                </div>
-                <div className={styles['frequent-food-content']}>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                    <FoodItem></FoodItem>
-                </div>
-            </div>
+            {searchResultCardStatus && (
+                <SearchResultCard
+                    closeSearchResults={closeSearchResults}
+                ></SearchResultCard>
+            )}
+            {frequentFoodComponent && (
+                <FrequentFoodComponent></FrequentFoodComponent>
+            )}
         </div>
     );
 };
