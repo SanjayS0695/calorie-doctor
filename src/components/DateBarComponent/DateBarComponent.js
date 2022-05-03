@@ -54,6 +54,8 @@ const DateBarComponent = () => {
     };
 
     const resetDate = () => {
+        setCurrentWeek(currentWeek);
+        setDates(getDaysOfTheWeek(getStartingDay(currentWeek)));
         setSelectedDateId(initialDateId);
         setSelectedDate(moment().format(dateFormat));
     };

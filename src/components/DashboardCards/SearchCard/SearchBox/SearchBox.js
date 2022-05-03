@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from './SearchBox.module.scss';
 
 const SearchBox = ({ handleSearch, searchBoxStatus }) => {
     const [searchActive, setSearchActive] = useState(false);
+
+    useEffect(() => {
+        if (!searchBoxStatus) {
+            setSearchActive(false);
+        }
+    }, [searchBoxStatus]);
 
     const onSearchButtonClick = () => {
         if (searchActive) {
@@ -60,6 +67,15 @@ const SearchBox = ({ handleSearch, searchBoxStatus }) => {
             </div>
         </div>
     );
+};
+
+SearchBox.propTypes = {
+    handleSearch: PropTypes.func,
+    searchBoxStatus: PropTypes.bool,
+};
+
+SearchBox.defaultPropTypes = {
+    searchBoxStatus: false,
 };
 
 export default SearchBox;

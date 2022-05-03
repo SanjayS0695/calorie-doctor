@@ -3,16 +3,18 @@ import { PropTypes } from 'prop-types';
 import styles from './DateComponent.module.scss';
 
 const DateComponent = ({ currentDay, id, selectedDateId, selectDate }) => {
-    const getClass = () => {
+    const checkForSelected = () => {
         if (selectedDateId === id) {
-            return 'date-wrapper';
+            return true;
         }
-        return 'date-wrapper';
+        return false;
     };
 
     return (
         <div
-            className={styles[getClass()]}
+            className={`${styles['date-wrapper']} ${
+                checkForSelected() && styles['selected']
+            }`}
             onClick={() => selectDate(id, currentDay.currentDate)}
         >
             <p className={styles['date']}>{currentDay.date}</p>

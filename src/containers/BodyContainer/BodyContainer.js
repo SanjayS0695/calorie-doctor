@@ -14,6 +14,10 @@ const BodyContainer = () => {
     const [displaySearchCard, setDisplaySearchCard] = useState(false);
     const [displayOverlay, setDisplayOverlay] = useState(false);
 
+    const addToMeal = () => {
+        setDisplaySearchCard(false);
+    };
+
     const showMealCard = () => {
         setDisplayMealCard(true);
         setDisplayOverlay(true);
@@ -72,7 +76,10 @@ const BodyContainer = () => {
                 ></MealCard>
             )}
             {displaySearchCard && (
-                <SearchCard closeSearchCard={closeSearchCard}></SearchCard>
+                <SearchCard
+                    addToMeal={addToMeal}
+                    closeSearchCard={closeSearchCard}
+                ></SearchCard>
             )}
             {displayOverlay && <div className={styles['overlay']}></div>}
         </div>

@@ -1,16 +1,13 @@
 @import 'src/assets/scss/variables.module';
 
 :root {
-    --primary: #ffce00;
-    --secondary: #fe4880;
-    --dark: #212121;
     --light: #f3f3f3;
 }
 
 .main-wrapper {
     width: 90%;
     height: 65%;
-    margin: 5% 0 5% 5%;
+    margin: 5% 0 0% 5%;
     perspective: 1000px;
     position: relative;
 
@@ -64,7 +61,7 @@
 
                 .search-result-header {
                     height: 10%;
-                    margin: 7.5% 10% 0;
+                    margin: 5% 10% 0;
                     width: 100%;
                     font-size: 20px;
                     color: $light;
@@ -81,7 +78,7 @@
                 }
 
                 .search-result-body {
-                    top: 20%;
+                    top: 15%;
                     width: 80%;
                     height: 70%;
                     margin: 2.5% 10%;
