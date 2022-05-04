@@ -18,19 +18,22 @@
             font-size: 16px;
         }
 
-        .quantity {
+        .sub-title {
             font-size: 14px;
         }
     }
 
     .food-calorie {
+        margin-right: 3%;
         font-size: 16px;
     }
 
-    svg {
-        margin: 0 3% 0 3%;
+    .btn-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 2%;
 
-        &:hover {
+        svg:hover {
             background-color: $secondary;
             border-radius: 50%;
             cursor: pointer;

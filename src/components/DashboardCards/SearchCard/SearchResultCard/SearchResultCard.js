@@ -2,22 +2,25 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SearchItem from './SearchItem/SearchItem';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
-import styles from './SearchResultCard.module.scss';
 import FoodCard from './FoodCard/FoodCard';
+import styles from './SearchResultCard.module.scss';
 
-const SearchResultCard = ({ closeSearchResults }) => {
+const SearchResultCard = ({ closeSearchResults, handleFooter }) => {
     const [flipped, setFlipped] = useState(false);
 
     const selectFood = () => {
         setFlipped(true);
+        handleFooter(false);
     };
 
     const discardFoodItem = () => {
         setFlipped(false);
+        handleFooter(true);
     };
 
     const addFoodItem = () => {
         setFlipped(false);
+        handleFooter(true);
     };
 
     return (

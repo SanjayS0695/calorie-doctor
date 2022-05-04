@@ -11,9 +11,21 @@ const SearchCard = ({ addToMeal, closeSearchCard }) => {
     const [searchResultCardStatus, setSearchResultCardStatus] = useState(false);
     const [showFrequentFood, setShowFrequentFood] = useState(true);
     const [searchBoxStatus, setSearchBoxStatus] = useState(false);
+    const [footerStatus, setFooterStatus] = useState(true);
+    const [savedMealsStatus, setSavedMealsStatus] = useState(false);
+
+    const showMyMeals = () => {
+        setSavedMealsStatus(!savedMealsStatus);
+        setShowFrequentFood(true);
+    };
+
+    const handleFooter = (status) => {
+        setFooterStatus(status);
+    };
 
     const showSelectedFoodItems = () => {
         setShowFrequentFood(!showFrequentFood);
+        setSavedMealsStatus(false);
         setSearchResultCardStatus(false);
     };
 
@@ -25,6 +37,7 @@ const SearchCard = ({ addToMeal, closeSearchCard }) => {
     const handleSearch = () => {
         setSearchResultCardStatus(true);
         setSearchBoxStatus(true);
+        setSavedMealsStatus(false);
     };
 
     return (
@@ -43,28 +56,41 @@ const SearchCard = ({ addToMeal, closeSearchCard }) => {
             {searchResultCardStatus && (
                 <SearchResultCard
                     closeSearchResults={closeSearchResults}
+                    handleFooter={handleFooter}
                 ></SearchResultCard>
             )}
             {!searchResultCardStatus && (
                 <FoodListCard
+                    handleFooter={handleFooter}
+                    savedMealsStatus={savedMealsStatus}
                     showFrequentFood={showFrequentFood}
                 ></FoodListCard>
             )}
-            <div className={styles['footer']}>
-                <Button
-                    variant="contained"
-                    size="small"
-                    onClick={showSelectedFoodItems}
-                >
-                    {!showFrequentFood ? 'Hide ' : 'Show '}Meal
-                </Button>
-                <div className={styles['total-calories']}>
-                    <h3>356 / 520 Cals</h3>
+            {footerStatus && (
+                <div className={styles['footer']}>
+                    <Button
+                        variant="contained"
+                        size="small"
+                        onClick={showSelectedFoodItems}
+                    >
+                        {!showFrequentFood ? 'Hide ' : 'Show '}Food Items
+                    </Button>
+                    <Button
+                        variant="contained"
+                        size="small"
+                        onClick={showMyMeals}
+                    >
+                        {savedMealsStatus ? 'Hide ' : 'Show '}My Meals
+                    </Button>
+                    <Button
+                        variant="contained"
+                        size="small"
+                        onClick={addToMeal}
+                    >
+                        Add to breakfast
+                    </Button>
                 </div>
-                <Button variant="contained" size="small" onClick={addToMeal}>
-                    Add to breakfast
-                </Button>
-            </div>
+            )}
         </div>
     );
 };
