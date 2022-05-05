@@ -1,10 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
+import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp';
 import image from '../../../../../assets/images/chickenCurry.png';
 import styles from './FoodCard.module.scss';
 
 const FoodCard = ({ addFoodItem, discardFoodItem }) => {
+    const [dropDownActive, setDropDownActive] = useState(false);
+    const [quantity, setQuantity] = useState('Grams');
+    const [portion, setPortion] = useState(1);
+
+    useEffect(() => {
+        setQuantity('Grams');
+        setPortion(1);
+    }, []);
+
+    const handleDropDownClick = () => {
+        setDropDownActive(!dropDownActive);
+    };
+
+    const increasePortion = () => {
+        setPortion((oldValue) => {
+            if (oldValue < 5) {
+                return oldValue + 0.5;
+            } else if (oldValue >= 5 && oldValue < 50) {
+                return oldValue + 5;
+            } else if (oldValue >= 50 && oldValue < 100) {
+                return oldValue + 10;
+            } else if (oldValue <= 2900) {
+                return oldValue + 100;
+            }
+        });
+    };
+
+    const decreasePortion = () => {
+        setPortion((oldValue) => {
+            if (oldValue > 0 && oldValue <= 5) {
+                return oldValue - 0.5;
+            } else if (oldValue > 5 && oldValue <= 50) {
+                return oldValue - 5;
+            } else if (oldValue > 50 && oldValue <= 100) {
+                return oldValue - 10;
+            } else if (oldValue <= 3000) {
+                return oldValue - 100;
+            }
+        });
+    };
+
     return (
         <div className={styles['back-card-content']}>
             <div className={styles['back-card-header']}>
@@ -48,8 +90,91 @@ const FoodCard = ({ addFoodItem, discardFoodItem }) => {
                 <Button variant="contained" onClick={discardFoodItem}>
                     Discard
                 </Button>
-                <div>Portion</div>
-                <div>Quantity</div>
+                <div className={styles['quantity-container']}>
+                    <div className={styles['stepper-container']}>
+                        <button
+                            id="decrement"
+                            className={styles['decrement']}
+                            onClick={decreasePortion}
+                        >
+                            -
+                        </button>
+                        <input
+                            type="number"
+                            min="0.5"
+                            max="2500"
+                            step="5"
+                            value={portion}
+                            id="quanityInput"
+                        ></input>
+                        <button
+                            id="increment"
+                            className={styles['increment']}
+                            onClick={increasePortion}
+                        >
+                            +
+                        </button>
+                    </div>
+                    <div className={styles['dropdown-container']}>
+                        <div className={styles['select-box']}>
+                            <div
+                                className={`${styles['options-container']} ${
+                                    dropDownActive && styles['active']
+                                }`}
+                            >
+                                <div className={styles['options']}>
+                                    <input
+                                        type="radio"
+                                        className={styles['radio']}
+                                        id="id1"
+                                        name="quantity"
+                                    ></input>
+                                    <label for="id1"> Id1 </label>
+                                </div>
+                                <div className={styles['options']}>
+                                    <input
+                                        type="radio"
+                                        className={styles['radio']}
+                                        id="id2"
+                                        name="quantity"
+                                    ></input>
+                                    <label for="id2"> Id2 </label>
+                                </div>
+                                <div className={styles['options']}>
+                                    <input
+                                        type="radio"
+                                        className={styles['radio']}
+                                        id="id3"
+                                        name="quantity"
+                                    ></input>
+                                    <label for="id3"> Id3 </label>
+                                </div>
+                                <div className={styles['options']}>
+                                    <input
+                                        type="radio"
+                                        className={styles['radio']}
+                                        id="id4"
+                                        name="quantity"
+                                    ></input>
+                                    <label for="id4"> Id4 </label>
+                                </div>
+                            </div>
+                            <div
+                                className={styles['selected']}
+                                onClick={handleDropDownClick}
+                            >
+                                <span>{quantity}</span>
+                                <div
+                                    className={`${styles['down-arrow']} ${
+                                        dropDownActive && styles['active']
+                                    }`}
+                                >
+                                    <KeyboardArrowDownSharpIcon></KeyboardArrowDownSharpIcon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <Button variant="contained" onClick={addFoodItem}>
                     Add
                 </Button>

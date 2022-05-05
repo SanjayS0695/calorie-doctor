@@ -15,6 +15,7 @@
         position: relative;
 
         &.flipped {
+            height: 115%;
             transform: rotateY(180deg);
         }
 
