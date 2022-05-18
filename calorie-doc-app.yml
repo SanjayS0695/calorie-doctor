@@ -1,1 +1,2 @@
-msg: Hello
+jwt:
+  secret: secret-string
